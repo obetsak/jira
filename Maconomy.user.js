@@ -4,6 +4,7 @@
 // @version      0.1
 // @description  Simplyfies copying jira information to use in Maconomy time sheet
 // @author       Jonas Kastebo
+// @grant        none
 // @require http://code.jquery.com/jquery-latest.js
 // ==/UserScript==
 
