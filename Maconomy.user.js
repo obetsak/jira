@@ -8,6 +8,8 @@
 // @require http://code.jquery.com/jquery-latest.js
 // ==/UserScript==
 
+doitdoit();
+
 function doitdoit() {
 
     var title = document.getElementsByTagName("title")[0].innerHTML;
