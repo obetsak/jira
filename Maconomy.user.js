@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name         Jira Maconomy text field
 // @namespace    https://github.com/obetsak
-// @version      0.1.0.3
+// @version      0.1.0.4
 // @description  Simplyfies copying jira information to use in Maconomy time sheet
 // @author       Jonas Kastebo
 // @grant        none
 // @include      https://access.istone.se*
 // ==/UserScript==
 
-doitdoit();
+generateMaconomyComment();
 
-function doitdoit() {
+function generateMaconomyComment() {
 
     // Ticket view
     var title = document.getElementsByTagName("title")[0].innerHTML;
