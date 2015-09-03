@@ -29,7 +29,7 @@ function doitdoit() {
         prefix = 'CR ';
     }
 
-    var myInput = '<input style="width: 90%; padding: 5px; overflow: hidden; display: inline;" id="maconomy_text" type="text"></input> <button class="js-textareacopybtn">Kopiera</button>';
+    var myInput = '<button class="js-textareacopybtn">Kopiera</button> <input style="width: 90%; padding: 5px; overflow: hidden; display: inline;" id="maconomy_text" type="text"></input>';
     var mytext = AJS.$(myInput);
     mytext.val(prefix + ticketNumber + description.text());
 
