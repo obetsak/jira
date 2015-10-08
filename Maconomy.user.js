@@ -1,17 +1,32 @@
 // ==UserScript==
 // @name         Jira Maconomy text field
 // @namespace    https://github.com/obetsak
-// @version      0.1.0.4
+// @version      0.9.0.0
 // @description  Simplyfies copying jira information to use in Maconomy time sheet
 // @author       Jonas Kastebo
 // @grant        none
 // @include      https://access.istone.se*
 // ==/UserScript==
 
-generateMaconomyComment();
+AJS.$(document).ready(function() {       
+    
+    AJS.$('.list-results-panel a, .issue-link').live("click", function(){
+        setTimeout(generateMaconomyComment, 1500);   
+    });      
+    
+    setTimeout(generateMaconomyComment, 1000);    
+}); 
+
+
 
 function generateMaconomyComment() {
 
+    
+    if (AJS.$(".js-textareacopybtn").length > 0 || AJS.$("#summary-val").length == 0)
+    {
+        return;
+    }
+    
     // Ticket view
     var title = document.getElementsByTagName("title")[0].innerHTML;
     var description = AJS.$('#summary-val');
@@ -28,17 +43,23 @@ function generateMaconomyComment() {
     if (ticketType.text().indexOf("Change request") > -1) {
         prefix = 'CR ';
     }
-
-    var myInput = '<button class="js-textareacopybtn">Kopiera</button> <input style="width: 90%; padding: 5px; overflow: hidden; display: inline;" id="maconomy_text" type="text"></input>';
+    
+    
+    
+    var myInput = '<button class="js-textareacopybtn  aui-button aui-button-primary aui-style">Kopiera ärende titel</button> <input style="width:1px;height:1px;border:0;" id="maconomy_text" type="text"></input>';
     var mytext = AJS.$(myInput);
+    
+    
+    
     mytext.val(prefix + ticketNumber + description.text());
-
-
+    
     mytext.insertAfter('#summary-val');
+    
     
     var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
 
-		copyTextareaBtn.addEventListener('click', function(event) {
+    
+        copyTextareaBtn.addEventListener('click', function(event) {
 		  var copyTextarea = document.querySelector('#maconomy_text');
 		  copyTextarea.select();
 
@@ -50,6 +71,9 @@ function generateMaconomyComment() {
 			console.log('Oops, unable to copy');
 		  }
 		});
+    
+    
+		
     
     // Ticket view END
     
