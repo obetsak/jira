@@ -47,7 +47,7 @@ function generateMaconomyComment() {
     
     
     
-    var myInput = '<button class="js-textareacopybtn  aui-button aui-button-primary aui-style">Kopiera ärende titel</button> <input style="width:1px;height:1px;border:0;" id="maconomy_text" type="text"></input>';
+    var myInput = '<button class="js-textareacopybtn  aui-button aui-button-primary aui-style">Kopiera ärendetitel</button> <input style="width:1px;height:1px;border:0;" id="maconomy_text" type="text"></input>';
     var mytext = AJS.$(myInput);
     
     
