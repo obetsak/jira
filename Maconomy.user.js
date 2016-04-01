@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Jira Maconomy text field
 // @namespace    https://github.com/obetsak
-// @version      0.9.0.1
+// @version      1.0.0.0
 // @description  Simplyfies copying jira information to use in Maconomy time sheet
 // @author       Jonas Kastebo
 // @grant        none
